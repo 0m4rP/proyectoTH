@@ -1,0 +1,66 @@
+.img-section {
+  background-color: #fdfdfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 8px 0 0 8px;
+  height: 100%;
+}
+
+.img-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 0 8px 8px 0;
+}   
+
+.button-close{
+    margin-top: 10vh;
+    margin-left: 17vh;
+}
+
+
+.form-section {
+  position: relative;
+  background-color: #f8f9fa; 
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Franja azul arriba */
+.form-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 120%;
+  height: 120px; /* altura de la franja */
+  background-color: #2a78b8;
+  transform: rotate(8deg);
+  transform-origin: top left;
+}
+
+/* Franja azul abajo */
+.form-section::after {
+  content: "";
+  position: absolute;
+  bottom: -95px; /* baja un poco para cubrir bien */
+  right: -70px;
+  width: 130%;
+  height: 120px;
+  background-color: #2a78b8;
+  transform: rotate(10deg);
+  transform-origin: bottom right;
+}
+
+/* Asegurar que el contenido esté sobre las franjas */
+.form-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.form-section h4 {
+    display: flex;
+    justify-content: center;
+}
