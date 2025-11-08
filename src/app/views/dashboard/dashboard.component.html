@@ -1,0 +1,91 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="menu-icon"><i class="fa-solid fa-bars fa-1x"></i></div>
+    <ul>
+        <li><a class="icon" href="/user"><i class="fa-solid fa-user fa-lg"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa-solid fa-file fa-lg"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa-regular fa-square-check fa-lg"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa-solid fa-book-open fa-lg"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa-solid fa-bell fa-lg"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa-solid fa-message fa-lg"></i></a></li>
+      </ul>
+      <ul class="menu-home">
+        <li class="home__icon"><a class="icon" href="/dashboard"><i class="fa-solid fa-house fa-lg"></i></a></li>
+        <li class="home__icon"><a class="icon" href="/login"><i class="fa-solid fa-right-from-bracket fa-lg"></i></a></li>
+      </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <header class="header">
+      <img src="../../../assets/picture.png" alt="User" class="user-img" />
+      <h2>Juan Perez, bienvenido!</h2>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Vacaciones disponibles</h3>
+        <p class="number">5</p>
+      </div>
+      <div class="card">
+        <h3>Licencias tomadas</h3>
+        <p class="number">1</p>
+      </div>
+      <div class="card news">
+        <h3>Noticias Internas</h3>
+        <p>
+          sadfasfasdfasdfasdfas dfsaafasdfasdfasdfsda fasdfsafsafdf...
+          <a href="#">Ver más...</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- Calendario real -->
+      <div class="calendar">
+        <h3>Calendario</h3>
+      <div class="calendar-box">
+        <div class="calendar-header">
+          <button (click)="prevMonth()">◀</button>
+          <h4>{{ monthNames[currentMonth] }} {{ currentYear }}</h4>
+          <button (click)="nextMonth()">▶</button>
+        </div>
+
+        <div class="calendar-grid">
+          <div class="day-name" *ngFor="let day of weekDays">{{ day }}</div>
+
+          <!-- 🔹 Aquí se renderizan los días, incluyendo los vacíos -->
+          <div
+            *ngFor="let day of daysInMonth"
+            [ngClass]="{ today: day.isToday, empty: !day.date }"
+            class="day-cell"
+          >
+            {{ day.date }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Gráfico -->
+      <div class="chart">
+        <h3>Gráfico</h3>
+        <canvas
+          baseChart
+          [data]="{ labels: barChartLabels, datasets: barChartData }"
+          [options]="barChartOptions"
+          [type]="barChartType">
+        </canvas>
+      </div>
+
+
+      <!-- Certificación -->
+      <div class="cert">
+        <button class="btn-cert">
+          <span class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> Generar certificación laboral
+        </button>
+      </div>
+    </section>
+  </main>
+</div>

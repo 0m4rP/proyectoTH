@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit{
   user: string = 'usuario'
   password: string = 'prueba123'
 
+  accFlag: boolean = false;
+
   ngOnInit(): void {
   }  
 
@@ -25,10 +27,19 @@ export class LoginComponent implements OnInit{
 
   if(userText == 'usuario' && passText == 'prueba123'){
     alert("credenciales correctas")
+    this.accFlag = true;
+    this.acceso(this.accFlag);
   } else {
     alert("credenciales incorrectas")
   }
 }
+
+
+  acceso(accUser: boolean){
+    if(accUser == true){
+      this.router.navigate(['/dashboard'])
+    }
+  }
 
   
 
