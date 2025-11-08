@@ -10,6 +10,5 @@ export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'user', component: UsersComponent},
-
     {path: '**', redirectTo: 'login'}
-];
+]
