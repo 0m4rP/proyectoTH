@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit{
   }
 }
 
-<<<<<<< HEAD
 
   acceso(accUser: boolean){
     if(accUser == true){
@@ -42,8 +41,6 @@ export class LoginComponent implements OnInit{
     }
   }
 
-=======
->>>>>>> 3fc379ae35c8bfb9fe1ef9ef1537d156123b2a60
   
 
   showPassword = false;
